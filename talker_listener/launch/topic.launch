@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- Arguments -->
+  <node pkg="talker_listener" type="talker" name="talker" respawn="false" output="screen"> </node>
+  <node pkg="talker_listener" type="listener" name="listener" respawn="false" output="screen"> </node>
+
+</launch>
