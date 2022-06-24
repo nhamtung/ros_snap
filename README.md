@@ -20,3 +20,7 @@
 
 # Install .snap file from Snapcraft
 - Install: $sudo snap install ros-test-snap_1.0.0_amd64.snap
+
+# Remove snap
+- Check snap list: $snap list
+- Remove snap: $sudo snap remove <snap_name>
