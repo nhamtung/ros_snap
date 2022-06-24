@@ -23,6 +23,10 @@
 # Install .snap file from Snapcraft
 - Install: $sudo snap install <snap_file>.snap
 
+# Update snap
+- Check snap list: $snap list
+- Update snap: $sudo snap refresh <snap_name>
+
 # Remove snap
 - Check snap list: $snap list
 - Remove snap: $sudo snap remove <snap_name>
