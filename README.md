@@ -24,3 +24,8 @@
 # Remove snap
 - Check snap list: $snap list
 - Remove snap: $sudo snap remove <snap_name>
+
+# Disable/Enable snap
+- Check list: $snap list
+- Disable: $sudo snap disable <snap_name>
+- Enable: $sudo snap enable <snap_name>
