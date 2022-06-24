@@ -8,18 +8,18 @@
 - Create snapcraft.yaml file: $snapcraft init
 - Edit snapcraft.yaml file
 - Build .snap file: $snapcraft
-- Install .snap file: $sudo snap install ros-test-snap_1.0.0_amd64.snap --devmode
+- Install .snap file: $sudo snap install <snap_file>.snap --devmode
 - Test: $ros-test-snap
 
 # Share .snap file
 - Login to Snapsraft: $snapcraft login
 - Enter the gmail and pass
-- Register snap file: $snapcraft register ros-test-snap_1.0.0_amd64.snap
+- Register snap file: $snapcraft register <snap_file>.snap
 - Direct to folder containing .snap file
-- Push: $snapcraft push ./ros-test-snap_1.0.0_amd64.snap --release=stable
+- Push: $snapcraft push ./<snap_file>.snap --release=stable
 
 # Install .snap file from Snapcraft
-- Install: $sudo snap install ros-test-snap_1.0.0_amd64.snap
+- Install: $sudo snap install <snap_file>.snap
 
 # Remove snap
 - Check snap list: $snap list
