@@ -23,7 +23,7 @@ parts:
   talker-listener:
     plugin: catkin
     source: https://github.com/nhamtung/ros_snap.git
-    source-branch: master
+    source-branch: main
     source-space: talker_listener/
     # catkin-packages: [talker_listener]              # (list of strings) List of catkin packages to build. If not specified, all packages in the workspace will be built. If set to an empty list ([]), no packages will be built.
     # source-space: src                               # (string) The source space containing Catkin packages. By default this is src.
@@ -48,7 +48,12 @@ apps:
 - Push: $snapcraft push ./<snap_file>.snap --release=stable
 
 # Install .snap file from Snapcraft
-- Install: $sudo snap install <snap_file>.snap
+- Install directly: 
+    + Direct to .snap folfer
+    + Install: $sudo snap install <snap_file>.snap
+- Install from snap store: 
+    + Find package: $sudo snap find <snap_name>
+    + Install: $sudo snap install <snap_name>
 
 # Update snap
 - Check snap list: $snap list
