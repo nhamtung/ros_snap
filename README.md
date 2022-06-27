@@ -6,8 +6,8 @@
 
 # Build .snap file
 - Install snapcraft: $sudo snap install --classic snapcraft
-- Create folder: $mkdir ~/ros_snap
-- Direct to folder .snap file: $cd ~/ros_snap
+- Create folder: $mkdir ~/<folder_name>
+- Direct to folder .snap file: $cd ~/<folder_name>
 - Create snapcraft.yaml file: $snapcraft init
 - Edit snapcraft.yaml file:
 ```
@@ -43,7 +43,7 @@ apps:
 # Share .snap file
 - Login to Snapsraft: $snapcraft login
 - Enter the gmail and pass
-- Register snap file: $snapcraft register <snap_file>.snap
+- Register snap file: $snapcraft register <snap_name>.snap
 - Direct to folder containing .snap file
 - Push: $snapcraft push ./<snap_file>.snap --release=stable
 
