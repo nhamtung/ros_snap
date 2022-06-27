@@ -6,9 +6,36 @@
 
 # Build .snap file
 - Install snapcraft: $sudo snap install --classic snapcraft
-- Direct to folder creating .snap file
+- Create folder: $mkdir ~/ros_snap
+- Direct to folder .snap file: $cd ~/ros_snap
 - Create snapcraft.yaml file: $snapcraft init
-- Edit snapcraft.yaml file
+- Edit snapcraft.yaml file:
+```
+name: ros-test-snap # you probably want to 'snapcraft register <name>'
+base: core18 # the base snap is the execution environment for this snap
+version: '1.0.0' # just for humans, typically '1.2+git' or '1.3.2'
+summary: Test snap with talker_listener package # 79 char long summary
+description: |
+  Description for ros-test-snap
+# grade: devel # must be 'stable' to release into candidate/stable channels
+confinement: devmode # use 'strict' once you have the right plugs and slots
+parts:
+  talker-listener:
+    plugin: catkin
+    source: https://github.com/nhamtung/ros_snap.git
+    source-branch: master
+    source-space: talker_listener/
+    # catkin-packages: [talker_listener]              # (list of strings) List of catkin packages to build. If not specified, all packages in the workspace will be built. If set to an empty list ([]), no packages will be built.
+    # source-space: src                               # (string) The source space containing Catkin packages. By default this is src.
+    # include-roscore: true                           # (boolean) Whether or not to include roscore with the part. Defaults to true.
+    # rosinstall-files:                               # (list of strings) List of rosinstall files to merge while pulling. Paths are relative to the source.
+    # recursive-rosinstall: false                     # (boolean) Whether or not to recursively merge/update rosinstall files from fetched sources. Will continue until all rosinstall files have been merged. Defaults to false.
+    # catkin-cmake-args:                              # (list of strings) Configure flags to pass onto the cmake invocation from catkin.
+    # catkin-ros-master-uri: http://localhost:11311   # (string) The URI to ros master setting the env variable ROS_MASTER_URI. Defaults to http://localhost:11311.
+apps:
+  ros-test-snap:
+    command: roslaunch talker_listener topic.launch
+```
 - Build .snap file: $snapcraft
 - Install .snap file: $sudo snap install <snap_file>.snap --devmode
 - Test: $ros-test-snap
