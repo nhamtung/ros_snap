@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- Arguments --> 
+  <node pkg="multidimensional_arrays" type="test_array" name="test_array" respawn="false" output="screen">
+  </node>
+
+</launch>
